@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import classes from "./post-item.module.css";
+import styles from "./post-item.module.css";
 
-function PostItem(props) {
+export const PostItem = (props) => {
   const { title, image, excerpt, date, slug } = props.post;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -16,10 +16,10 @@ function PostItem(props) {
   const linkPath = `/posts/${slug}`;
 
   return (
-    <li className={classes.post}>
+    <li className={styles.post}>
       <Link href={linkPath}>
         <a>
-          <div className={classes.image}>
+          <div className={styles.image}>
             <Image
               src={imagePath}
               alt={title}
@@ -28,7 +28,7 @@ function PostItem(props) {
               layout="responsive"
             />
           </div>
-          <div className={classes.content}>
+          <div className={styles.content}>
             <h3>{title}</h3>
             <time>{formattedDate}</time>
             <p>{excerpt}</p>
@@ -37,6 +37,4 @@ function PostItem(props) {
       </Link>
     </li>
   );
-}
-
-export default PostItem;
+};

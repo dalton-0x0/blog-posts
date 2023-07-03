@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FeaturedPosts } from "@components/home-page/featured-posts";
-import Hero from "@components/home-page/home-banner";
+import { HomeBanner } from "@components/home-page/home-banner";
 // import { getFeaturedPosts } from "@lib/posts-util";
 
 function HomePage(props) {
@@ -13,7 +13,7 @@ function HomePage(props) {
           content="Find events relating to programming"
         />
       </Head>
-      <Hero />
+      <HomeBanner />
       <FeaturedPosts posts={props.posts} />
     </>
   );

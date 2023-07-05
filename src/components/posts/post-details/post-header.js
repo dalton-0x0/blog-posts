@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import styles from "./post-header.module.css";
 
-function PostHeader(props) {
+export const PostHeader = (props) => {
   const { title, image } = props;
 
   return (
@@ -11,6 +11,4 @@ function PostHeader(props) {
       <Image src={image} alt={title} width={200} height={150} />
     </header>
   );
-}
-
-export default PostHeader;
+};

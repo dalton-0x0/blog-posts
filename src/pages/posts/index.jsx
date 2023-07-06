@@ -1,9 +1,8 @@
 import Head from "next/head";
-
 import { AllPosts } from "@components/posts/all-posts";
 import { getAllPosts } from "@lib/posts-util";
 
-export const AllPostsPage = (props) => {
+const AllPostsPage = (props) => {
   return (
     <>
       <Head>
@@ -27,3 +26,5 @@ export const getStaticProps = () => {
     },
   };
 };
+
+export default AllPostsPage;

@@ -22,14 +22,13 @@ const contactHandler = async (req, res) => {
       message,
     };
 
-    console.log("foo = ", newMessage);
-
     let client;
 
-    const connectionString = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
+    // TODO: for dev, use:
+    // const connectionString = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 
     try {
-      client = await MongoClient.connect(connectionString);
+      client = await MongoClient.connect(process.env.MONGODB_URI); // TODO: use connectionString for dev
     } catch (error) {
       res.status(500).json({ message: "Could not connect to database." });
       return;

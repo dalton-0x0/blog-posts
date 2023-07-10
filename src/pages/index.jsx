@@ -6,8 +6,11 @@ import { getFeaturedPosts } from "@lib/posts-util";
 const HomePage = (props) => (
   <>
     <Head>
-      <title>Events</title>
-      <meta name="description" content="Find events relating to programming" />
+      <title>Dalton's Blog</title>
+      <meta
+        name="description"
+        content="Sharing my thoughts about software and web development"
+      />
     </Head>
     <HomeBanner />
     <FeaturedPosts posts={props.posts} />

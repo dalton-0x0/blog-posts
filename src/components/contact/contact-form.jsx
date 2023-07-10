@@ -22,7 +22,7 @@ export const ContactForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredName, setEnteredName] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
-  const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
+  const [requestStatus, setRequestStatus] = useState();
   const [requestError, setRequestError] = useState();
 
   useEffect(() => {
@@ -36,10 +36,8 @@ export const ContactForm = () => {
     }
   }, [requestStatus]);
 
-  async function sendMessageHandler(event) {
+  const sendMessageHandler = async (event) => {
     event.preventDefault();
-
-    // optional: add client-side validation
 
     setRequestStatus("pending");
 
@@ -57,7 +55,7 @@ export const ContactForm = () => {
       setRequestError(error.message);
       setRequestStatus("error");
     }
-  }
+  };
 
   let notification;
 
@@ -87,7 +85,7 @@ export const ContactForm = () => {
 
   return (
     <section className={styles.contact}>
-      <h1>How can I help you?</h1>
+      <h1>I'd love to hear from you!</h1>
       <form className={styles.form} onSubmit={sendMessageHandler}>
         <div className={styles.controls}>
           <div className={styles.control}>

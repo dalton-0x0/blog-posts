@@ -1,13 +1,18 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const Document = () => (
+const MyApp = () => (
   <Html lang="en">
     <Head />
     <body>
       <Main />
       <NextScript />
+      <div id="contact-notification"></div>
     </body>
   </Html>
 );
 
-export default Document;
+export default class MyDocument extends Document {
+  render() {
+    return <MyApp />;
+  }
+}
